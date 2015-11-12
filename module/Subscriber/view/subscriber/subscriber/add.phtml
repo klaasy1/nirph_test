@@ -1,0 +1,53 @@
+<?php
+ // module/Album/view/album/album/add.phtml:
+
+ //Rather get this from the controller, by joinint subscription and product
+ //Did not really have enough time to do this due to work commitments
+ if($product_id == 1){
+     $title = 'Standard';
+ }
+ 
+  if($product_id == 2){
+     $title = 'Awesome';
+ }
+ 
+  if($product_id == 3){
+     $title = 'Basic';
+ }
+ 
+ $title .= ' subscription package';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <?php
+ $form->setAttribute('action', $this->url('subscriber', array('action' => 'add')));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id'));
+ echo '<div class="form-group">';
+ echo $this->formRow($form->get('username')->setAttribute('class', 'form-control'));
+ echo '</div>';
+ echo '<div class="form-group">';
+ echo $this->formRow($form->get('email')->setAttribute('class', 'form-control'));
+ echo '</div>';
+ echo '<div class="form-group">';
+ echo $this->formRow($form->get('password')->setAttribute('class', 'form-control'));
+ echo '</div>';
+ echo '<div class="form-group">';
+ echo $this->formRow($form->get('retype-password')->setAttribute('class', 'form-control'));
+ echo '</div>';
+ /*
+ echo '<div class="form-group">';
+ echo $this->formRow($form->get('product_id')->setAttribute('class', 'form-control'));
+ echo '</div>';
+ */
+ //echo '<div class="form-group" style="display: ;">';
+// echo   '<label>';
+ //echo     '<span>Product</span>';
+ echo     '<input type="hidden" name="product_id" value="'.$product_id.'">';
+ //echo   '</label>';
+ //echo '</div>';
+ 
+ echo $this->formSubmit($form->get('submit'));
+ echo $this->form()->closeTag();

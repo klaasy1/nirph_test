@@ -1,0 +1,28 @@
+ <?php
+ // module/Subscriber/view/subscriber/subscriber/index.phtml:
+
+ $title = 'Subscribers';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <table class="table">
+ <tr>
+     <th>Username</th>
+     <th>Email</th>
+     <th>Password</th>
+     <th>Product</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($subscribers as $subscriber) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($subscriber->username);?></td>
+     <td><?php echo $this->escapeHtml($subscriber->email);?></td>
+     <td><?php echo $this->escapeHtml($subscriber->password);?></td>
+     <td><?php echo $this->escapeHtml($subscriber->product_id);?></td>
+     <td>
+         <a class="btn btn-default" href="<?php echo $this->url('subscriber',
+             array('action'=>'edit', 'id' => $subscriber->id));?>"><span class="glyphicon glyphicon-folder-open"></span> View</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>

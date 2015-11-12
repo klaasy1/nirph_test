@@ -1,0 +1,26 @@
+ <?php
+ // module/Subscriber/view/subscriber/subscriber/index.phtml:
+
+ $title = 'Products';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <table class="table">
+ <tr>
+     <th>Name</th>
+     <th>Price</th>
+     <th>Number of Downloads</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($products as $product) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($product->name);?></td>
+     <td><?php echo $this->escapeHtml($product->price);?></td>
+     <td><?php echo $this->escapeHtml($product->number_of_downloads);?></td>
+     <td>
+         <a class="btn btn-default" href="<?php echo $this->url('subscriber',
+             array('action'=>'add', 'id' => $product->id));?>"><span class="glyphicon glyphicon-hand-left"></span> Subscribe</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
