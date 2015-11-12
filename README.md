@@ -1,4 +1,4 @@
-ZendSkeletonApplication
+Build using ZendSkeletonApplication
 =======================
 
 Introduction
