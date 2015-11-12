@@ -1,11 +1,9 @@
-Build using ZendSkeletonApplication
+Test
 =======================
 
 Introduction
 ------------
-This is a simple, skeleton application using the ZF2 MVC layer and module
-systems. This application is meant to be used as a starting place for those
-looking to get their feet wet with ZF2.
+.................
 
 Installation using Composer
 ---------------------------
@@ -15,7 +13,7 @@ The easiest way to create a new ZF2 project is to use [Composer](https://getcomp
 
 Create your new ZF2 project:
 
-    composer create-project -n -sdev zendframework/skeleton-application path/to/install
+    composer create-project -n -sdev /klaasy1/nirph_test path/to/install
 
 
 
@@ -23,10 +21,10 @@ Create your new ZF2 project:
 
 If you don't have composer installed globally then another way to create a new ZF2 project is to download the tarball and install it:
 
-1. Download the [tarball](https://github.com/zendframework/ZendSkeletonApplication/tarball/master), extract it and then install the dependencies with a locally installed Composer:
+1. Download the [tarball](https://github.com/klaasy1/nirph_test/tarball/master), extract it and then install the dependencies with a locally installed Composer:
 
         cd my/project/dir
-        curl -#L https://github.com/zendframework/ZendSkeletonApplication/tarball/master | tar xz --strip-components=1
+        curl -#L https://github.com/klaasy1/nirph_test/tarball/master | tar xz --strip-components=1
     
 
 2. Download composer into your project directory and install the dependencies:
